@@ -1,7 +1,7 @@
 const { chromium } = require("playwright-chromium");
 
 module.exports = async function (context, req) {
-    const url = req.query.url || "https://google.com/";
+    const url = req.query.url || "https://www.microsoft.com/";
     const browser =  await chromium.launch();
     const page = await browser.newPage();
     await page.goto(url);
