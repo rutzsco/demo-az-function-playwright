@@ -2,8 +2,11 @@
   "name": "",
   "version": "",
   "description": "",
-  "scripts" : {
+  "scripts": {
     "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "playwright-chromium": "^1.4.0"
   },
   "author": ""
 }
