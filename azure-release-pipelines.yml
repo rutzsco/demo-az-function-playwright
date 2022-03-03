@@ -3,7 +3,7 @@ trigger: none
 resources:
   pipelines:
   - pipeline: build
-    source: 'rutzsco.demo-az-functions-python'
+    source: 'demo-az-functions-playwright'
   
 variables:
   vmImageName: 'ubuntu-latest'
@@ -13,10 +13,10 @@ stages:
 - template: azure-release-pipelines-stage-template.yml
   parameters:
     stageName: 'CI'
-    environment: 'MLR-API-CI'
+    environment: 'CI'
     azureSubscription: ${{ variables.azureSubscription }}
-    functionAppName: 'demo-function-python-api-ci'
-    resourceGroupName: 'demo-function-python-api-ci'
-    storageAccountName: 'azfpapici'
+    functionAppName: 'demo-function-playwright-ci'
+    resourceGroupName: 'demo-function-playwright-ci'
+    storageAccountName: 'azfplaywrightci'
     region: 'East US'
     packageName: 'App.zip'
