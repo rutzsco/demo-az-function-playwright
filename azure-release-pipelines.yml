@@ -1,0 +1,22 @@
+trigger: none
+
+resources:
+  pipelines:
+  - pipeline: build
+    source: 'rutzsco.demo-az-functions-python'
+  
+variables:
+  vmImageName: 'ubuntu-latest'
+  azureSubscription: 'Demo Account'
+
+stages:
+- template: azure-release-pipelines-stage-template.yml
+  parameters:
+    stageName: 'CI'
+    environment: 'MLR-API-CI'
+    azureSubscription: ${{ variables.azureSubscription }}
+    functionAppName: 'demo-function-python-api-ci'
+    resourceGroupName: 'demo-function-python-api-ci'
+    storageAccountName: 'azfpapici'
+    region: 'East US'
+    packageName: 'App.zip'
