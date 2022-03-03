@@ -43,6 +43,7 @@ stages:
       displayName: 'Build extensions'
 
     - script: |
+        export PLAYWRIGHT_BROWSERS_PATH=0
         npm install
         npm run build --if-present
         npm run test --if-present
